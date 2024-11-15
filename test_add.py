@@ -11,7 +11,7 @@ class TestAdd(unittest.TestCase):
         
         result = add(-1, 1)
         self.assertEqual(result, 0)
-        
+    
         result = add(-1, -1)
         self.assertEqual(result, -2)
 
