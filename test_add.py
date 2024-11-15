@@ -25,9 +25,3 @@ class Testadd(unittest.TestCase):
 if _name_ == '_main_':
     unittest.main()
 """
-
-# Save the corrected content back to the test_add file
-with open(test_add_path, 'w') as file:
-    file.write(corrected_test_add_content)
-
-corrected_test_add_content
