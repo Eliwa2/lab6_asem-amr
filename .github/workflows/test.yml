@@ -1,24 +1,25 @@
 name: test-add
 on: push
 jobs:
-     test:
-         runs-on: ubuntu-latest
-         steps:
-             - name: checkout
-               uses: actions/checkout@v4
-             - name: install dependancies
-               uses: actions/setup-python@v2
-               with:
-                 python-version: '3.x'
-             - name: install libiraries
-               run: pip insatall -r requirments.txt
-             - name: run test
-               run: pyrhon -m unittrst test_add.py      
-     deploy:
-         needs: test  
-         runs-on: ubuntu-latest
-         steps:
-             - name: checkout
-               uses: actions/checkout@v4 
-             - name: deploy-done
-               run: echo "Deployed Succsseful"
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install dependencies
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      - name: Install libraries
+        run: pip install -r requirements.txt
+      - name: Run tests
+        run: python -m unittest test_add.py
+      
+  deploy:
+    needs: test  
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4 
+      - name: Deploy
+        run: echo "Deployed Successfully"
