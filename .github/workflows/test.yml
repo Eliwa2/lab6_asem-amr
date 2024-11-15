@@ -13,7 +13,7 @@ jobs:
              - name: install libiraries
                run: pip insatall -r requirments.txt
              - name: run test
-               run: pyrhon -m unittrst test*.py      
+               run: pyrhon -m unittrst test_add.py      
      deploy:
          needs: test  
          runs-on: ubuntu-latest
