@@ -1,0 +1,24 @@
+name: test-add
+on: push
+jobs:
+     test:
+         runs-on: ubuntu-latest
+         steps:
+             - name: checkout
+               uses: actions/checkout@v4
+             - name: install dependancies
+               uses: actions/setup-python@v2
+               with:
+                 python-version: '3.x'
+             - name: install libiraries
+               run: pip insatall -r requirments.txt
+             - name: run test
+               run: pyrhon -m unittrst test*.py      
+     deploy:
+         needs: test  
+         runs-on: ubuntu-latest
+         steps:
+             - name: checkout
+               uses: actions/checkout@v4 
+             - name: deploy-done
+               run: echo "Deployed Succsseful"
