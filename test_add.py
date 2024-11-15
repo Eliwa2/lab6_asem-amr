@@ -6,14 +6,9 @@ class TestAdd(unittest.TestCase):
 
     def test_add(self):
         # Test addition functionality
-        result = add(3, 7)
-        self.assertEqual(result, 10)
-        
-        result = add(-1, 1)
-        self.assertEqual(result, 0)
-    
-        result = add(-1, -1)
-        self.assertEqual(result, -2)
+        self.assertEqual(add(3, 7), 10)  # Positive numbers
+        self.assertEqual(add(-1, 1), 0)  # Positive and negative
+        self.assertEqual(add(-1, -1), -2)  # Negative numbers
 
 if _name_ == '_main_':
     unittest.main()
